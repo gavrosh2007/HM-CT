@@ -17,9 +17,9 @@ export default async function handler(req, res) {
         price_currency: currency,
         order_description: description,
         order_id: 'order_' + Date.now() + '_' + Math.random().toString(36).substring(7),
-        ipn_callback_url: '',
-        success_url: '',
-        cancel_url: ''
+        ipn_callback_url: 'https://hm-ct.vercel.app/api/ipn',
+        success_url: 'https://hm-ct.vercel.app/success',
+        cancel_url: 'https://hm-ct.vercel.app/cancel'
     };
 
     try {
