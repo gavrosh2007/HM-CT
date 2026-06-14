@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Платёж успешен — Hermes Management & Consulting</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&display=swap&subset=greek" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Cormorant Garamond', 'Times New Roman', serif; }
+        body {
+            background-image: url('H-wallpaper.jpeg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-color: rgba(255, 255, 255, 0.4);
+            background-blend-mode: overlay;
+            color: #3a2c2a;
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 80vh;
+        }
+        .success-card {
+            background: rgba(255, 255, 255, 0.5);
+            backdrop-filter: blur(4px);
+            border-radius: 48px;
+            padding: 3rem;
+            text-align: center;
+            border: 1px solid rgba(193, 123, 90, 0.3);
+            max-width: 600px;
+            width: 100%;
+        }
+        .success-card h1 {
+            font-size: 3rem;
+            color: #2c5f2d;
+            margin-bottom: 1rem;
+        }
+        .success-card p {
+            font-size: 1.3rem;
+            color: #5f4e47;
+            margin-bottom: 2rem;
+        }
+        .big-btn {
+            background: #c17b5a;
+            color: white;
+            border: none;
+            padding: 1rem 2.5rem;
+            font-size: 1.3rem;
+            border-radius: 60px;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.2s;
+            display: inline-block;
+            margin: 0.5rem;
+            font-weight: 700;
+            text-decoration: none;
+        }
+        .big-btn:hover {
+            background: #b06a4a;
+            transform: scale(1.02);
+        }
+        footer {
+            text-align: center;
+            margin-top: 3rem;
+            padding: 1.5rem;
+            background: rgba(255,255,255,0.3);
+            backdrop-filter: blur(4px);
+            border-radius: 2rem;
+            font-size: 0.85rem;
+            color: #1e2b4f;
+        }
+        footer a {
+            color: #c17b5a;
+            text-decoration: none;
+            margin: 0 0.3rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="success-card">
+            <h1>✅ Платёж успешен</h1>
+            <p>Благодарим за доверие. Ваш заказ принят и будет обработан в ближайшее время.</p>
+            <a href="/" class="big-btn">Вернуться на главную</a>
+        </div>
+    </div>
+    <footer>
+        <p>© 2026 Hermes Management & Consulting Ltd. Все права защищены.</p>
+    </footer>
+</body>
+</html>
