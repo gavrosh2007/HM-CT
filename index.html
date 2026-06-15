@@ -911,11 +911,11 @@
         <div id="doc-arch2-ua"><div class="doc-text"><h2 style="color:#c17b5a;">Мистецтво як інвестиція</h2><p>Are tariffs weighing down your portfolio? Recent sharp market declines and incoming tariffs on global imports are a clear reminder that relying solely on equities leaves investors vulnerable. Here's the good news: unlike many imported goods, artwork remains exempt from new US tariffs, potentially offering an advantage as trade restrictions impact many other markets. Leading financial strategists, including JP Morgan and BlackRock CEO Larry Fink, recommend diversifying portfolios by allocating roughly 20% to alternative assets (alongside stocks and bonds), to help navigate market volatility. If you're exploring alternative assets for your portfolio, contemporary art has demonstrated a low correlation with public equity markets historically. While Fink and JP Morgan did not cite art explicitly, the asset class has provided valuable diversification during certain periods of economic distress.</p></div></div>
     </div>
 
-    <!-- ========== ПЛАТЁЖНЫЙ МОДУЛЬ: ОБЫЧНЫЕ И ЦИФРОВЫЕ ДЕНЬГИ + МУЛЬТИЯЗЫЧНАЯ ИНСТРУКЦИЯ ========== -->
+    <!-- ========== ПЛАТЁЖНЫЙ МОДУЛЬ: ОБЫЧНЫЕ И ЦИФРОВЫЕ ДЕНЬГИ ========== -->
     <div class="payment-module">
         <div style="display: flex; flex-wrap: wrap; gap: 2rem; justify-content: center;">
             
-            <!-- Блок 1: ОБЫЧНЫЕ ДЕНЬГИ -->
+            <!-- Блок 1: ОБЫЧНЫЕ ДЕНЬГИ (заглушка, не подключена) -->
             <div style="flex: 1; min-width: 280px; background: rgba(255,255,255,0.4); backdrop-filter: blur(4px); border-radius: 2rem; padding: 1.5rem; border: 1px solid rgba(193,123,90,0.3);">
                 <h3 style="color: #c17b5a; text-align: center;">💳 <span data-i18n="payment_fiat_title">Обычные деньги</span></h3>
                 <p style="text-align: center; font-size: 0.9rem;" data-i18n="payment_fiat_desc">Visa, Mastercard, Apple Pay, Google Pay</p>
@@ -929,7 +929,7 @@
                 <p style="font-size: 0.7rem; text-align: center; margin-top: 0.8rem;" data-i18n="payment_fiat_currencies">Принимаем: евро, доллары, франки, йены, юани</p>
             </div>
             
-            <!-- Блок 2: ЦИФРОВЫЕ ДЕНЬГИ -->
+            <!-- Блок 2: ЦИФРОВЫЕ ДЕНЬГИ (РАБОТАЕТ, NOWPayments) -->
             <div style="flex: 1; min-width: 280px; background: rgba(255,255,255,0.4); backdrop-filter: blur(4px); border-radius: 2rem; padding: 1.5rem; border: 1px solid rgba(193,123,90,0.3);">
                 <h3 style="color: #c17b5a; text-align: center;">🪙 <span data-i18n="payment_crypto_title">Цифровые деньги</span></h3>
                 <p style="text-align: center; font-size: 0.9rem;" data-i18n="payment_crypto_desc">Bitcoin, Ethereum, USDT, и 350+ других</p>
@@ -945,12 +945,13 @@
             
         </div>
         
-        <!-- МУЛЬТИЯЗЫЧНАЯ ИНСТРУКЦИЯ (под кнопками) -->
-        <div style="margin-top: 2rem; padding: 1rem; background: rgba(193,123,90,0.1); border-radius: 2rem; border-left: 4px solid #c17b5a;">
-            <p style="font-size: 0.85rem; color: #5f4e47; margin: 0; text-align: center;">
+        <!-- МУЛЬТИЯЗЫЧНАЯ ИНСТРУКЦИЯ (увеличенный текст, ссылка на контакты) -->
+        <div style="margin-top: 2rem; padding: 1.2rem; background: rgba(193,123,90,0.1); border-radius: 2rem; border-left: 4px solid #c17b5a;">
+            <p style="font-size: 1rem; color: #5f4e47; margin: 0; text-align: center; line-height: 1.4;">
                 📄 <strong data-i18n="payment_note_title">Индивидуальные условия</strong><br>
-                <span data-i18n="payment_note_text">Для крупных сделок, корпоративных заказов или нестандартных условий, пожалуйста, свяжитесь с нами для выставления персонального инвойса и согласования деталей.</span>
-                <a href="#contact" style="color: #c17b5a; text-decoration: underline;" data-i18n="payment_note_link">свяжитесь с нами</a>
+                <span data-i18n="payment_note_text">Для крупных сделок, корпоративных заказов или нестандартных условий, пожалуйста, </span>
+                <a href="#contact" style="color: #c17b5a; text-decoration: underline; font-weight: 600;" data-i18n="payment_note_link">свяжитесь с нами</a>
+                <span data-i18n="payment_note_text2"> для выставления персонального инвойса и согласования деталей.</span>
             </p>
         </div>
     </div>
@@ -1018,7 +1019,7 @@
     <audio id="inspireAudio" loop preload="none"><source src="inspire.mp3" type="audio/mpeg"></audio>
 
     <script>
-        // ========== ФУНКЦИИ ДЛЯ СТОПОК (ваш старый код, без изменений) ==========
+        // ========== ФУНКЦИИ ДЛЯ СТОПОК ==========
         function toggleArch(e) { document.getElementById('archStack').classList.toggle('expanded'); }
         function toggleCake(e) { document.getElementById('cakeStack').classList.toggle('expanded'); }
         function toggleOffshore(e) { document.getElementById('offshoreStack').classList.toggle('expanded'); }
@@ -1026,7 +1027,7 @@
         function toggleBank(e) { document.getElementById('bankStack').classList.toggle('expanded'); }
 
         (function() {
-            // ---------- ПЕРЕВОДЫ (полный набор) ----------
+            // ---------- ПЕРЕВОДЫ ----------
             const translations = {
                 ru: {
                     nav_business: 'Бизнес', nav_creative: 'Креатив', nav_contact: 'Контакты',
@@ -1048,7 +1049,8 @@
                     arch1_title: 'Проект жилья между пляжами', arch2_title: 'Искусство как инвестиция',
                     payment_fiat_title: 'Обычные деньги', payment_fiat_desc: 'Visa, Mastercard, Apple Pay, Google Pay', payment_fiat_btn: '💳 Оплатить картой', payment_fiat_currencies: 'Принимаем: евро, доллары, франки, йены, юани',
                     payment_crypto_title: 'Цифровые деньги', payment_crypto_desc: 'Bitcoin, Ethereum, USDT, и 350+ других', payment_crypto_btn: '🪙 Оплатить криптой', payment_crypto_note: 'Клиент выбирает валюту на странице оплаты',
-                    payment_amount: 'Сумма (€):', payment_note_title: 'Индивидуальные условия', payment_note_text: 'Для крупных сделок, корпоративных заказов или нестандартных условий, пожалуйста, свяжитесь с нами для выставления персонального инвойса и согласования деталей.', payment_note_link: 'свяжитесь с нами'
+                    payment_amount: 'Сумма (€):', payment_note_title: 'Индивидуальные условия', payment_note_text: 'Для крупных сделок, корпоративных заказов или нестандартных условий, пожалуйста, ', payment_note_link: 'свяжитесь с нами', payment_note_text2: ' для выставления персонального инвойса и согласования деталей.',
+                    payment_processing: '⏳ Создание платежа...', payment_invalid_amount: 'Введите корректную сумму', payment_error: 'Ошибка создания платежа', payment_connection_error: 'Ошибка соединения с сервером'
                 },
                 en: {
                     nav_business: 'Business', nav_creative: 'Creative', nav_contact: 'Contact',
@@ -1070,7 +1072,8 @@
                     arch1_title: 'Housing project between beaches', arch2_title: 'Art as an investment',
                     payment_fiat_title: 'Fiat Money', payment_fiat_desc: 'Visa, Mastercard, Apple Pay, Google Pay', payment_fiat_btn: '💳 Pay by card', payment_fiat_currencies: 'We accept: EUR, USD, CHF, JPY, CNY',
                     payment_crypto_title: 'Digital Money', payment_crypto_desc: 'Bitcoin, Ethereum, USDT, and 350+ others', payment_crypto_btn: '🪙 Pay with crypto', payment_crypto_note: 'Customer chooses currency on payment page',
-                    payment_amount: 'Amount (€):', payment_note_title: 'Custom terms', payment_note_text: 'For large deals, corporate orders or special conditions, please contact us for a personal invoice and details.', payment_note_link: 'contact us'
+                    payment_amount: 'Amount (€):', payment_note_title: 'Custom terms', payment_note_text: 'For large deals, corporate orders or special conditions, please ', payment_note_link: 'contact us', payment_note_text2: ' to issue a personal invoice and agree on details.',
+                    payment_processing: '⏳ Creating payment...', payment_invalid_amount: 'Enter a valid amount', payment_error: 'Payment creation error', payment_connection_error: 'Connection error'
                 },
                 el: {
                     nav_business: 'Επιχειρήσεις', nav_creative: 'Δημιουργικό', nav_contact: 'Επικοινωνία',
@@ -1092,7 +1095,8 @@
                     arch1_title: 'Σχέδιο κατοικίας ανάμεσα σε παραλίες', arch2_title: 'Η τέχνη ως επένδυση',
                     payment_fiat_title: 'Συμβατικά Χρήματα', payment_fiat_desc: 'Visa, Mastercard, Apple Pay, Google Pay', payment_fiat_btn: '💳 Πληρωμή με κάρτα', payment_fiat_currencies: 'Δεχόμαστε: EUR, USD, CHF, JPY, CNY',
                     payment_crypto_title: 'Ψηφιακά Χρήματα', payment_crypto_desc: 'Bitcoin, Ethereum, USDT, και 350+ άλλα', payment_crypto_btn: '🪙 Πληρωμή με κρύπτο', payment_crypto_note: 'Ο πελάτης επιλέγει νόμισμα στη σελίδα πληρωμής',
-                    payment_amount: 'Ποσό (€):', payment_note_title: 'Ειδικοί όροι', payment_note_text: 'Για μεγάλες συναλλαγές, εταιρικές παραγγελίες ή ειδικές συνθήκες, παρακαλούμε επικοινωνήστε μαζί μας για προσωπικό τιμολόγιο και λεπτομέρειες.', payment_note_link: 'επικοινωνήστε μαζί μας'
+                    payment_amount: 'Ποσό (€):', payment_note_title: 'Ειδικοί όροι', payment_note_text: 'Για μεγάλες συναλλαγές, εταιρικές παραγγελίες ή ειδικές συνθήκες, παρακαλούμε ', payment_note_link: 'επικοινωνήστε μαζί μας', payment_note_text2: ' για την έκδοση προσωπικού τιμολογίου και τη συμφωνία λεπτομερειών.',
+                    payment_processing: '⏳ Δημιουργία πληρωμής...', payment_invalid_amount: 'Εισάγετε έγκυρο ποσό', payment_error: 'Σφάλμα δημιουργίας πληρωμής', payment_connection_error: 'Σφάλμα σύνδεσης'
                 },
                 ua: {
                     nav_business: 'Бізнес', nav_creative: 'Креатив', nav_contact: 'Контакти',
@@ -1114,7 +1118,8 @@
                     arch1_title: 'Проект житла між пляжами', arch2_title: 'Мистецтво як інвестиція',
                     payment_fiat_title: 'Звичайні гроші', payment_fiat_desc: 'Visa, Mastercard, Apple Pay, Google Pay', payment_fiat_btn: '💳 Оплатити карткою', payment_fiat_currencies: 'Приймаємо: EUR, USD, CHF, JPY, CNY',
                     payment_crypto_title: 'Цифрові гроші', payment_crypto_desc: 'Bitcoin, Ethereum, USDT, та 350+ інших', payment_crypto_btn: '🪙 Оплатити криптою', payment_crypto_note: 'Клієнт обирає валюту на сторінці оплати',
-                    payment_amount: 'Сума (€):', payment_note_title: 'Індивідуальні умови', payment_note_text: 'Для великих угод, корпоративних замовлень або нестандартних умов, будь ласка, зв\'яжіться з нами для виставлення персонального інвойсу та узгодження деталей.', payment_note_link: "зв'яжіться з нами"
+                    payment_amount: 'Сума (€):', payment_note_title: 'Індивідуальні умови', payment_note_text: 'Для великих угод, корпоративних замовлень або нестандартних умов, будь ласка, ', payment_note_link: "зв'яжіться з нами", payment_note_text2: ' для виставлення персонального інвойсу та узгодження деталей.',
+                    payment_processing: '⏳ Створення платежу...', payment_invalid_amount: 'Введіть коректну суму', payment_error: 'Помилка створення платежу', payment_connection_error: 'Помилка з\'єднання з сервером'
                 }
             };
 
@@ -1153,7 +1158,7 @@
             });
             setLanguage('ru');
 
-            // ---------- ПЕРЕКЛЮЧЕНИЕ РАЗДЕЛОВ С ВИДЕО (ваш старый код, без изменений) ----------
+            // ---------- ПЕРЕКЛЮЧЕНИЕ РАЗДЕЛОВ С ВИДЕО ----------
             const sections = document.querySelectorAll('.section');
             sections.forEach(s => s.classList.remove('active'));
             document.getElementById('business').classList.add('active');
@@ -1312,15 +1317,50 @@
             setupStackElements('archStack');
             setupStackElements('cakeStack');
 
-            // ========== ЗАГЛУШКИ ДЛЯ ПЛАТЕЖЕЙ ==========
+            // ========== ОБЫЧНЫЕ ДЕНЬГИ (ЗАГЛУШКА, НЕ ПОДКЛЮЧЕНА) ==========
             document.getElementById('fiat-pay-btn')?.addEventListener('click', () => {
                 const amount = document.getElementById('fiat-amount').value;
-                alert(`💳 ${translations[currentLang].payment_fiat_title}: €${amount}\n\n${translations[currentLang].payment_note_text}`);
+                alert(`💳 ${translations[currentLang].payment_fiat_title}: €${amount}\n\n${translations[currentLang].payment_note_text}${translations[currentLang].payment_note_link}${translations[currentLang].payment_note_text2}`);
             });
 
-            document.getElementById('crypto-pay-btn')?.addEventListener('click', () => {
-                const amount = document.getElementById('crypto-amount').value;
-                alert(`🪙 ${translations[currentLang].payment_crypto_title}: €${amount}\n\n${translations[currentLang].payment_crypto_note}`);
+            // ========== ЦИФРОВЫЕ ДЕНЬГИ (РАБОТАЕТ ЧЕРЕЗ NOWPAYMENTS) ==========
+            document.getElementById('crypto-pay-btn')?.addEventListener('click', async () => {
+                const amount = parseFloat(document.getElementById('crypto-amount').value);
+                if (isNaN(amount) || amount < 1) {
+                    alert(translations[currentLang].payment_invalid_amount);
+                    return;
+                }
+                
+                const button = document.getElementById('crypto-pay-btn');
+                const originalText = button.textContent;
+                button.disabled = true;
+                button.textContent = translations[currentLang].payment_processing;
+                
+                try {
+                    const response = await fetch('/api/create-invoice', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({
+                            price: amount,
+                            currency: 'eur',
+                            description: `Payment for order: ${amount} EUR`
+                        })
+                    });
+                    
+                    const data = await response.json();
+                    
+                    if (response.ok && data.invoice_url) {
+                        window.open(data.invoice_url, '_blank');
+                    } else {
+                        alert(translations[currentLang].payment_error);
+                    }
+                } catch (error) {
+                    console.error('Crypto payment error:', error);
+                    alert(translations[currentLang].payment_connection_error);
+                } finally {
+                    button.disabled = false;
+                    button.textContent = originalText;
+                }
             });
 
         })();
