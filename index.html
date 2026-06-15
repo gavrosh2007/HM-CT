@@ -1322,8 +1322,7 @@
                 const amount = document.getElementById('fiat-amount').value;
                 alert(`💳 ${translations[currentLang].payment_fiat_title}: €${amount}\n\n${translations[currentLang].payment_note_text}${translations[currentLang].payment_note_link}${translations[currentLang].payment_note_text2}`);
             });
-
-                        // ========== ЦИФРОВЫЕ ДЕНЬГИ (РАБОТАЕТ ЧЕРЕЗ NOWPAYMENTS) ==========
+            // ========== ЦИФРОВЫЕ ДЕНЬГИ (РАБОТАЕТ ЧЕРЕЗ NOWPAYMENTS) ==========
             document.getElementById('crypto-pay-btn')?.addEventListener('click', async () => {
                 const amount = parseFloat(document.getElementById('crypto-amount').value);
                 if (isNaN(amount) || amount < 1) {
