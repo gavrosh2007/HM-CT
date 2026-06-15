@@ -910,35 +910,48 @@
         <div id="doc-arch2-el"><div class="doc-text"><h2 style="color:#c17b5a;">Η τέχνη ως επένδυση</h2><p>Are tariffs weighing down your portfolio? Recent sharp market declines and incoming tariffs on global imports are a clear reminder that relying solely on equities leaves investors vulnerable. Here's the good news: unlike many imported goods, artwork remains exempt from new US tariffs, potentially offering an advantage as trade restrictions impact many other markets. Leading financial strategists, including JP Morgan and BlackRock CEO Larry Fink, recommend diversifying portfolios by allocating roughly 20% to alternative assets (alongside stocks and bonds), to help navigate market volatility. If you're exploring alternative assets for your portfolio, contemporary art has demonstrated a low correlation with public equity markets historically. While Fink and JP Morgan did not cite art explicitly, the asset class has provided valuable diversification during certain periods of economic distress.</p></div></div>
         <div id="doc-arch2-ua"><div class="doc-text"><h2 style="color:#c17b5a;">Мистецтво як інвестиція</h2><p>Are tariffs weighing down your portfolio? Recent sharp market declines and incoming tariffs on global imports are a clear reminder that relying solely on equities leaves investors vulnerable. Here's the good news: unlike many imported goods, artwork remains exempt from new US tariffs, potentially offering an advantage as trade restrictions impact many other markets. Leading financial strategists, including JP Morgan and BlackRock CEO Larry Fink, recommend diversifying portfolios by allocating roughly 20% to alternative assets (alongside stocks and bonds), to help navigate market volatility. If you're exploring alternative assets for your portfolio, contemporary art has demonstrated a low correlation with public equity markets historically. While Fink and JP Morgan did not cite art explicitly, the asset class has provided valuable diversification during certain periods of economic distress.</p></div></div>
     </div>
-    </div>
 
-    <!-- ПЛАТЁЖНЫЙ МОДУЛЬ (работает через ваш API на Vercel) -->
+    <!-- ========== ПЛАТЁЖНЫЙ МОДУЛЬ: ОБЫЧНЫЕ И ЦИФРОВЫЕ ДЕНЬГИ + МУЛЬТИЯЗЫЧНАЯ ИНСТРУКЦИЯ ========== -->
     <div class="payment-module">
-        <div style="background: rgba(255, 255, 255, 0.5); backdrop-filter: blur(4px); border-radius: 2rem; padding: 2rem; text-align: center; border: 1px solid rgba(193,123,90,0.3);">
-            <h3 style="color: #c17b5a;" data-i18n="payment_title">Оплата услуг / Пожертвование</h3>
-            <div class="service-select">
-                <label style="font-weight: bold;" data-i18n="payment_service">Услуга: </label>
-                <select id="service" style="font-family: inherit; font-size: 1.2rem; padding: 0.5rem 1rem; margin: 0.5rem; border-radius: 2rem;">
-                    <option value="consultation" data-i18n="payment_consultation">Консультация (100-200 EUR/USD)</option>
-                    <option value="art" data-i18n="payment_art">Картина (1000-10000 EUR/USD)</option>
-                    <option value="architecture" data-i18n="payment_architecture">Архитектурный проект (10000-50000 EUR/USD)</option>
-                    <option value="cake" data-i18n="payment_cake">Торт (50-100 EUR/USD)</option>
-                    <option value="charity" data-i18n="payment_charity">Благотворительность / Тест (от 10 EUR/USD)</option>
-                </select>
+        <div style="display: flex; flex-wrap: wrap; gap: 2rem; justify-content: center;">
+            
+            <!-- Блок 1: ОБЫЧНЫЕ ДЕНЬГИ -->
+            <div style="flex: 1; min-width: 280px; background: rgba(255,255,255,0.4); backdrop-filter: blur(4px); border-radius: 2rem; padding: 1.5rem; border: 1px solid rgba(193,123,90,0.3);">
+                <h3 style="color: #c17b5a; text-align: center;">💳 <span data-i18n="payment_fiat_title">Обычные деньги</span></h3>
+                <p style="text-align: center; font-size: 0.9rem;" data-i18n="payment_fiat_desc">Visa, Mastercard, Apple Pay, Google Pay</p>
+                <div style="text-align: center; margin: 1rem 0;">
+                    <label style="font-weight: bold;" data-i18n="payment_amount">Сумма (€): </label>
+                    <input type="number" id="fiat-amount" value="10" min="1" step="1" style="width: 120px; padding: 0.3rem; border-radius: 2rem; border: 1px solid #c17b5a;">
+                </div>
+                <div style="text-align: center;">
+                    <button id="fiat-pay-btn" class="big-btn" style="background: #2c5f2d; font-size: 1rem; padding: 0.6rem 1.5rem;" data-i18n="payment_fiat_btn">💳 Оплатить картой</button>
+                </div>
+                <p style="font-size: 0.7rem; text-align: center; margin-top: 0.8rem;" data-i18n="payment_fiat_currencies">Принимаем: евро, доллары, франки, йены, юани</p>
             </div>
-            <div class="currency-switch">
-                <label style="font-weight: bold;" data-i18n="payment_currency">Валюта: </label>
-                <button id="usdBtn" data-currency="USD" style="background: rgba(193,123,90,0.2); border: 1px solid #c17b5a;">USD</button>
-                <button id="eurBtn" data-currency="EUR" style="background: #c17b5a; color: white; border: 1px solid #c17b5a;">EUR</button>
+            
+            <!-- Блок 2: ЦИФРОВЫЕ ДЕНЬГИ -->
+            <div style="flex: 1; min-width: 280px; background: rgba(255,255,255,0.4); backdrop-filter: blur(4px); border-radius: 2rem; padding: 1.5rem; border: 1px solid rgba(193,123,90,0.3);">
+                <h3 style="color: #c17b5a; text-align: center;">🪙 <span data-i18n="payment_crypto_title">Цифровые деньги</span></h3>
+                <p style="text-align: center; font-size: 0.9rem;" data-i18n="payment_crypto_desc">Bitcoin, Ethereum, USDT, и 350+ других</p>
+                <div style="text-align: center; margin: 1rem 0;">
+                    <label style="font-weight: bold;" data-i18n="payment_amount">Сумма (€): </label>
+                    <input type="number" id="crypto-amount" value="10" min="1" step="1" style="width: 120px; padding: 0.3rem; border-radius: 2rem; border: 1px solid #c17b5a;">
+                </div>
+                <div style="text-align: center;">
+                    <button id="crypto-pay-btn" class="big-btn" style="background: #2c5f2d; font-size: 1rem; padding: 0.6rem 1.5rem;" data-i18n="payment_crypto_btn">🪙 Оплатить криптой</button>
+                </div>
+                <p style="font-size: 0.7rem; text-align: center; margin-top: 0.8rem;" data-i18n="payment_crypto_note">Клиент выбирает валюту на странице оплаты</p>
             </div>
-            <div class="amount-input">
-                <label style="font-weight: bold;" data-i18n="payment_amount_label">Сумма (кратно 10): </label>
-                <input type="number" id="amount" step="10" min="10" max="999990" value="10" style="width: 150px;">
-                <span id="currencySymbol" style="font-weight: bold;">EUR</span>
-            </div>
-            <div><button id="payButton" class="big-btn" style="background: #2c5f2d;" data-i18n="payment_button">💳 Оплатить сейчас</button></div>
-            <p style="font-size: 0.9rem; margin-top: 1rem;" data-i18n="payment_accept">Принимаем: Bitcoin, USDT (TRC-20), Ethereum и банковские карты (после активации фиатного шлюза)</p>
-            <p style="font-size: 0.8rem; margin-top: 0.5rem;" data-i18n="payment_min_note">Минимальная сумма: 10 EUR/USD (кратно 10). Для консультаций, картин, проектов и тортов — итоговая сумма обсуждается отдельно, здесь вы указываете аванс или точную сумму по согласованию.</p>
+            
+        </div>
+        
+        <!-- МУЛЬТИЯЗЫЧНАЯ ИНСТРУКЦИЯ (под кнопками) -->
+        <div style="margin-top: 2rem; padding: 1rem; background: rgba(193,123,90,0.1); border-radius: 2rem; border-left: 4px solid #c17b5a;">
+            <p style="font-size: 0.85rem; color: #5f4e47; margin: 0; text-align: center;">
+                📄 <strong data-i18n="payment_note_title">Индивидуальные условия</strong><br>
+                <span data-i18n="payment_note_text">Для крупных сделок, корпоративных заказов или нестандартных условий, пожалуйста, свяжитесь с нами для выставления персонального инвойса и согласования деталей.</span>
+                <a href="#contact" style="color: #c17b5a; text-decoration: underline;" data-i18n="payment_note_link">свяжитесь с нами</a>
+            </p>
         </div>
     </div>
 
@@ -1005,7 +1018,7 @@
     <audio id="inspireAudio" loop preload="none"><source src="inspire.mp3" type="audio/mpeg"></audio>
 
     <script>
-        // ========== ФУНКЦИИ ДЛЯ СТОПОК ==========
+        // ========== ФУНКЦИИ ДЛЯ СТОПОК (ваш старый код, без изменений) ==========
         function toggleArch(e) { document.getElementById('archStack').classList.toggle('expanded'); }
         function toggleCake(e) { document.getElementById('cakeStack').classList.toggle('expanded'); }
         function toggleOffshore(e) { document.getElementById('offshoreStack').classList.toggle('expanded'); }
@@ -1013,7 +1026,7 @@
         function toggleBank(e) { document.getElementById('bankStack').classList.toggle('expanded'); }
 
         (function() {
-            // ---------- ПЕРЕВОДЫ (полный набор как у вас) ----------
+            // ---------- ПЕРЕВОДЫ (полный набор) ----------
             const translations = {
                 ru: {
                     nav_business: 'Бизнес', nav_creative: 'Креатив', nav_contact: 'Контакты',
@@ -1033,13 +1046,9 @@
                     offshore1_title: 'Наша деятельность', offshore2_title: 'Вступительное слово', offshore3_title: 'Инвестиционные возможности',
                     tax1_title: 'Налоговые преимущества Кипра', tax2_title: 'NON-Dom Status',
                     arch1_title: 'Проект жилья между пляжами', arch2_title: 'Искусство как инвестиция',
-                    payment_title: 'Оплата услуг / Пожертвование', payment_service: 'Услуга:',
-                    payment_consultation: 'Консультация (100-200 EUR/USD)', payment_art: 'Картина (1000-10000 EUR/USD)',
-                    payment_architecture: 'Архитектурный проект (10000-50000 EUR/USD)', payment_cake: 'Торт (50-100 EUR/USD)',
-                    payment_charity: 'Благотворительность / Тест (от 10 EUR/USD)', payment_currency: 'Валюта:',
-                    payment_amount_label: 'Сумма (кратно 10):', payment_button: '💳 Оплатить сейчас',
-                    payment_accept: 'Принимаем: Bitcoin, USDT (TRC-20), Ethereum и банковские карты (после активации фиатного шлюза)',
-                    payment_min_note: 'Минимальная сумма: 10 EUR/USD (кратно 10). Для консультаций, картин, проектов и тортов — итоговая сумма обсуждается отдельно, здесь вы указываете аванс или точную сумму по согласованию.'
+                    payment_fiat_title: 'Обычные деньги', payment_fiat_desc: 'Visa, Mastercard, Apple Pay, Google Pay', payment_fiat_btn: '💳 Оплатить картой', payment_fiat_currencies: 'Принимаем: евро, доллары, франки, йены, юани',
+                    payment_crypto_title: 'Цифровые деньги', payment_crypto_desc: 'Bitcoin, Ethereum, USDT, и 350+ других', payment_crypto_btn: '🪙 Оплатить криптой', payment_crypto_note: 'Клиент выбирает валюту на странице оплаты',
+                    payment_amount: 'Сумма (€):', payment_note_title: 'Индивидуальные условия', payment_note_text: 'Для крупных сделок, корпоративных заказов или нестандартных условий, пожалуйста, свяжитесь с нами для выставления персонального инвойса и согласования деталей.', payment_note_link: 'свяжитесь с нами'
                 },
                 en: {
                     nav_business: 'Business', nav_creative: 'Creative', nav_contact: 'Contact',
@@ -1059,13 +1068,9 @@
                     offshore1_title: 'Our Activities', offshore2_title: 'Foreword', offshore3_title: 'Investment Opportunities',
                     tax1_title: 'Tax Advantages of Cyprus', tax2_title: 'NON-Dom Status',
                     arch1_title: 'Housing project between beaches', arch2_title: 'Art as an investment',
-                    payment_title: 'Payment / Donation', payment_service: 'Service:',
-                    payment_consultation: 'Consultation (100-200 EUR/USD)', payment_art: 'Artwork (1000-10000 EUR/USD)',
-                    payment_architecture: 'Architecture project (10000-50000 EUR/USD)', payment_cake: 'Cake (50-100 EUR/USD)',
-                    payment_charity: 'Charity / Test (from 10 EUR/USD)', payment_currency: 'Currency:',
-                    payment_amount_label: 'Amount (multiple of 10):', payment_button: '💳 Pay now',
-                    payment_accept: 'We accept: Bitcoin, USDT (TRC-20), Ethereum and bank cards (after fiat gateway activation)',
-                    payment_min_note: 'Minimum amount: 10 EUR/USD (multiple of 10). For consultations, artworks, projects and cakes — final price is agreed separately, here you can pay a deposit or the exact amount.'
+                    payment_fiat_title: 'Fiat Money', payment_fiat_desc: 'Visa, Mastercard, Apple Pay, Google Pay', payment_fiat_btn: '💳 Pay by card', payment_fiat_currencies: 'We accept: EUR, USD, CHF, JPY, CNY',
+                    payment_crypto_title: 'Digital Money', payment_crypto_desc: 'Bitcoin, Ethereum, USDT, and 350+ others', payment_crypto_btn: '🪙 Pay with crypto', payment_crypto_note: 'Customer chooses currency on payment page',
+                    payment_amount: 'Amount (€):', payment_note_title: 'Custom terms', payment_note_text: 'For large deals, corporate orders or special conditions, please contact us for a personal invoice and details.', payment_note_link: 'contact us'
                 },
                 el: {
                     nav_business: 'Επιχειρήσεις', nav_creative: 'Δημιουργικό', nav_contact: 'Επικοινωνία',
@@ -1085,13 +1090,9 @@
                     offshore1_title: 'Οι Δραστηριότητές μας', offshore2_title: 'Πρόλογος', offshore3_title: 'Επενδυτικές Ευκαιρίες',
                     tax1_title: 'Φορολογικά Πλεονεκτήματα της Κύπρου', tax2_title: 'Καθεστώς NON-Dom',
                     arch1_title: 'Σχέδιο κατοικίας ανάμεσα σε παραλίες', arch2_title: 'Η τέχνη ως επένδυση',
-                    payment_title: 'Πληρωμή / Δωρεά', payment_service: 'Υπηρεσία:',
-                    payment_consultation: 'Συμβουλευτική (100-200 EUR/USD)', payment_art: 'Έργο τέχνης (1000-10000 EUR/USD)',
-                    payment_architecture: 'Αρχιτεκτονικό έργο (10000-50000 EUR/USD)', payment_cake: 'Κέικ (50-100 EUR/USD)',
-                    payment_charity: 'Φιλανθρωπία / Δοκιμή (από 10 EUR/USD)', payment_currency: 'Νόμισμα:',
-                    payment_amount_label: 'Ποσό (πολλαπλάσιο του 10):', payment_button: '💳 Πληρωμή τώρα',
-                    payment_accept: 'Δεχόμαστε: Bitcoin, USDT (TRC-20), Ethereum και τραπεζικές κάρτες (μετά την ενεργοποίηση της πύλης fiat)',
-                    payment_min_note: 'Ελάχιστο ποσό: 10 EUR/USD (πολλαπλάσιο του 10). Για συμβουλευτικές, έργα τέχνης, αρχιτεκτονικά έργα και κέικ — η τελική τιμή συμφωνείται ξεχωριστά, εδώ μπορείτε να πληρώσετε προκαταβολή ή το ακριβές ποσό.'
+                    payment_fiat_title: 'Συμβατικά Χρήματα', payment_fiat_desc: 'Visa, Mastercard, Apple Pay, Google Pay', payment_fiat_btn: '💳 Πληρωμή με κάρτα', payment_fiat_currencies: 'Δεχόμαστε: EUR, USD, CHF, JPY, CNY',
+                    payment_crypto_title: 'Ψηφιακά Χρήματα', payment_crypto_desc: 'Bitcoin, Ethereum, USDT, και 350+ άλλα', payment_crypto_btn: '🪙 Πληρωμή με κρύπτο', payment_crypto_note: 'Ο πελάτης επιλέγει νόμισμα στη σελίδα πληρωμής',
+                    payment_amount: 'Ποσό (€):', payment_note_title: 'Ειδικοί όροι', payment_note_text: 'Για μεγάλες συναλλαγές, εταιρικές παραγγελίες ή ειδικές συνθήκες, παρακαλούμε επικοινωνήστε μαζί μας για προσωπικό τιμολόγιο και λεπτομέρειες.', payment_note_link: 'επικοινωνήστε μαζί μας'
                 },
                 ua: {
                     nav_business: 'Бізнес', nav_creative: 'Креатив', nav_contact: 'Контакти',
@@ -1111,13 +1112,9 @@
                     offshore1_title: 'Наша діяльність', offshore2_title: 'Вступне слово', offshore3_title: 'Інвестиційні можливості',
                     tax1_title: 'Податкові переваги Кіпру', tax2_title: 'Статус NON-Dom',
                     arch1_title: 'Проект житла між пляжами', arch2_title: 'Мистецтво як інвестиція',
-                    payment_title: 'Оплата послуг / Пожертва', payment_service: 'Послуга:',
-                    payment_consultation: 'Консультація (100-200 EUR/USD)', payment_art: 'Картина (1000-10000 EUR/USD)',
-                    payment_architecture: 'Архітектурний проєкт (10000-50000 EUR/USD)', payment_cake: 'Торт (50-100 EUR/USD)',
-                    payment_charity: 'Благодійність / Тест (від 10 EUR/USD)', payment_currency: 'Валюта:',
-                    payment_amount_label: 'Сума (кратно 10):', payment_button: '💳 Оплатити зараз',
-                    payment_accept: 'Приймаємо: Bitcoin, USDT (TRC-20), Ethereum та банківські картки (після активації фіатного шлюзу)',
-                    payment_min_note: 'Мінімальна сума: 10 EUR/USD (кратно 10). Для консультацій, картин, проєктів та тортів — підсумкова сума обговорюється окремо, тут ви вказуєте аванс або точну суму за погодженням.'
+                    payment_fiat_title: 'Звичайні гроші', payment_fiat_desc: 'Visa, Mastercard, Apple Pay, Google Pay', payment_fiat_btn: '💳 Оплатити карткою', payment_fiat_currencies: 'Приймаємо: EUR, USD, CHF, JPY, CNY',
+                    payment_crypto_title: 'Цифрові гроші', payment_crypto_desc: 'Bitcoin, Ethereum, USDT, та 350+ інших', payment_crypto_btn: '🪙 Оплатити криптою', payment_crypto_note: 'Клієнт обирає валюту на сторінці оплати',
+                    payment_amount: 'Сума (€):', payment_note_title: 'Індивідуальні умови', payment_note_text: 'Для великих угод, корпоративних замовлень або нестандартних умов, будь ласка, зв\'яжіться з нами для виставлення персонального інвойсу та узгодження деталей.', payment_note_link: "зв'яжіться з нами"
                 }
             };
 
@@ -1156,7 +1153,7 @@
             });
             setLanguage('ru');
 
-            // ---------- ПЕРЕКЛЮЧЕНИЕ РАЗДЕЛОВ С ВИДЕО ----------
+            // ---------- ПЕРЕКЛЮЧЕНИЕ РАЗДЕЛОВ С ВИДЕО (ваш старый код, без изменений) ----------
             const sections = document.querySelectorAll('.section');
             sections.forEach(s => s.classList.remove('active'));
             document.getElementById('business').classList.add('active');
@@ -1230,7 +1227,6 @@
                 });
             });
 
-            // Клик по карточкам бизнес-раздела
             document.getElementById('card-offshore').addEventListener('click', function(e) {
                 e.stopPropagation();
                 document.querySelectorAll('.stack-container').forEach(c => c.classList.remove('active'));
@@ -1250,7 +1246,6 @@
                 document.getElementById('bankStack').classList.remove('expanded');
             });
 
-            // Кнопка "Вдохновиться"
             const inspireBtn = document.getElementById('inspireButton');
             const inspireAudio = document.getElementById('inspireAudio');
             inspireBtn.addEventListener('click', function(e) {
@@ -1265,7 +1260,6 @@
                 isPlaying = !isPlaying;
             });
 
-            // Модальное окно для контента
             const contentOverlay = document.getElementById('contentOverlay');
             const contentDisplay = document.getElementById('contentDisplay');
             const closeBtn = document.getElementById('closeContent');
@@ -1281,7 +1275,6 @@
             contentOverlay.addEventListener('click', (e) => { if (e.target === contentOverlay) contentOverlay.classList.remove('active'); });
             closeBtn.addEventListener('click', () => contentOverlay.classList.remove('active'));
 
-            // ---------- ОБРАБОТЧИКИ ДЛЯ ЭЛЕМЕНТОВ ВСЕХ СТОПОК ----------
             function setupStackElements(stackId) {
                 const stack = document.getElementById(stackId);
                 if (!stack) return;
@@ -1319,73 +1312,17 @@
             setupStackElements('archStack');
             setupStackElements('cakeStack');
 
-            // ========== ПЛАТЁЖНЫЙ МОДУЛЬ (ВАШ API НА VERCEL) ==========
-            let currentCurrency = 'EUR';
-            const usdBtn = document.getElementById('usdBtn');
-            const eurBtn = document.getElementById('eurBtn');
-            const currencySymbolSpan = document.getElementById('currencySymbol');
-            const amountInput = document.getElementById('amount');
-            const payButton = document.getElementById('payButton');
-            const serviceSelect = document.getElementById('service');
+            // ========== ЗАГЛУШКИ ДЛЯ ПЛАТЕЖЕЙ ==========
+            document.getElementById('fiat-pay-btn')?.addEventListener('click', () => {
+                const amount = document.getElementById('fiat-amount').value;
+                alert(`💳 ${translations[currentLang].payment_fiat_title}: €${amount}\n\n${translations[currentLang].payment_note_text}`);
+            });
 
-            if (usdBtn && eurBtn && amountInput && payButton) {
-                usdBtn.addEventListener('click', () => {
-                    currentCurrency = 'USD';
-                    usdBtn.style.background = '#c17b5a';
-                    usdBtn.style.color = 'white';
-                    eurBtn.style.background = 'rgba(193,123,90,0.2)';
-                    eurBtn.style.color = '#3a2c2a';
-                    if (currencySymbolSpan) currencySymbolSpan.innerText = 'USD';
-                    if (parseFloat(amountInput.value) < 10) amountInput.value = 10;
-                });
-                eurBtn.addEventListener('click', () => {
-                    currentCurrency = 'EUR';
-                    eurBtn.style.background = '#c17b5a';
-                    eurBtn.style.color = 'white';
-                    usdBtn.style.background = 'rgba(193,123,90,0.2)';
-                    usdBtn.style.color = '#3a2c2a';
-                    if (currencySymbolSpan) currencySymbolSpan.innerText = 'EUR';
-                    if (parseFloat(amountInput.value) < 10) amountInput.value = 10;
-                });
-                payButton.addEventListener('click', async () => {
-                    let amount = parseFloat(amountInput.value);
-                    if (isNaN(amount) || amount < 10) amount = 10;
-                    amount = Math.floor(amount);
-                    const serviceText = serviceSelect ? serviceSelect.options[serviceSelect.selectedIndex].text : 'Услуга';
-                    const description = `Hermes: ${serviceText} - ${amount} ${currentCurrency}`;
-                    
-                    // ВАШ API ENDPOINT (замените на реальный после деплоя Vercel)
-                    const API_URL = '/api/create-invoice';
-                    
-                    try {
-                        payButton.disabled = true;
-                        payButton.textContent = currentLang === 'ru' ? '⏳ Создание платежа...' : (currentLang === 'en' ? '⏳ Creating payment...' : (currentLang === 'el' ? '⏳ Δημιουργία πληρωμής...' : '⏳ Створення платежу...'));
-                        const response = await fetch(API_URL, {
-                            method: 'POST',
-                            headers: { 'Content-Type': 'application/json' },
-                            body: JSON.stringify({
-                                price: amount,
-                                currency: currentCurrency,
-                                description: description,
-                                email: 'gavrosh2007@gmail.com'
-                            })
-                        });
-                        const data = await response.json();
-                        if (response.ok && data.invoice_url) {
-                            window.open(data.invoice_url, '_blank');
-                            alert(currentLang === 'ru' ? `Платёж на сумму ${amount} ${currentCurrency} создан. Откроется страница оплаты.` : (currentLang === 'en' ? `Payment of ${amount} ${currentCurrency} created. Payment page will open.` : (currentLang === 'el' ? `Η πληρωμή ${amount} ${currentCurrency} δημιουργήθηκε. Θα ανοίξει η σελίδα πληρωμής.` : `Платіж на суму ${amount} ${currentCurrency} створено. Відкриється сторінка оплати.`)));
-                        } else {
-                            alert(currentLang === 'ru' ? `Ошибка: ${data.error || 'Не удалось создать платёж.'}` : (currentLang === 'en' ? `Error: ${data.error || 'Failed to create payment.'}` : (currentLang === 'el' ? `Σφάλμα: ${data.error || 'Αποτυχία δημιουργίας πληρωμής.'}` : `Помилка: ${data.error || 'Не вдалося створити платіж.'}`)));
-                        }
-                    } catch (error) {
-                        console.error('Payment error:', error);
-                        alert(currentLang === 'ru' ? 'Ошибка соединения с сервером. Убедитесь, что Vercel API развёрнут.' : (currentLang === 'en' ? 'Server connection error. Make sure Vercel API is deployed.' : (currentLang === 'el' ? 'Σφάλμα σύνδεσης διακομιστή. Βεβαιωθείτε ότι το Vercel API έχει αναπτυχθεί.' : 'Помилка зєднання з сервером. Переконайтеся, що Vercel API розгорнуто.')));
-                    } finally {
-                        payButton.disabled = false;
-                        payButton.textContent = currentLang === 'ru' ? '💳 Оплатить сейчас' : (currentLang === 'en' ? '💳 Pay now' : (currentLang === 'el' ? '💳 Πληρωμή τώρα' : '💳 Оплатити зараз'));
-                    }
-                });
-            }
+            document.getElementById('crypto-pay-btn')?.addEventListener('click', () => {
+                const amount = document.getElementById('crypto-amount').value;
+                alert(`🪙 ${translations[currentLang].payment_crypto_title}: €${amount}\n\n${translations[currentLang].payment_crypto_note}`);
+            });
+
         })();
     </script>
 </body>
