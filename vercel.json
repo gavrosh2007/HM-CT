@@ -9,7 +9,7 @@
         },
         {
           "key": "Content-Security-Policy",
-          "value": "default-src 'self'; script-src 'self' 'unsafe-inline' https://nowpayments.io https://api.nowpayments.io; style-src 'self' 'unsafe-inline'; img-src * data:; media-src *; connect-src 'self' https://api.nowpayments.io;"
+          "value": "default-src 'self' https:; script-src 'self' 'unsafe-inline' https://nowpayments.io https://api.nowpayments.io https://www.youtube.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; frame-src https://www.youtube.com https://nowpayments.io; img-src * data:; media-src *; connect-src 'self' https://api.nowpayments.io;"
         },
         {
           "key": "X-Content-Type-Options",
