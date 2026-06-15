@@ -949,7 +949,7 @@
             <p style="font-size: 1rem; color: #5f4e47; margin: 0; text-align: center; line-height: 1.4;">
                 📄 <strong data-i18n="payment_note_title">Индивидуальные условия</strong><br>
                 <span data-i18n="payment_note_text">Для крупных сделок, корпоративных заказов или нестандартных условий, пожалуйста, </span>
-                <a href="javascript:void(0)" data-section="contact" style="color: #c17b5a; text-decoration: underline; font-weight: 600;" data-i18n="payment_note_link">свяжитесь с нами</a>
+                <a href="#" data-section="contact" style="color: #c17b5a; text-decoration: underline; font-weight: 600;" data-i18n="payment_note_link">свяжитесь с нами</a>
                 <span data-i18n="payment_note_text2"> для выставления персонального инвойса и согласования деталей.</span>
             </p>
         </div>
@@ -1229,6 +1229,16 @@
                     const section = e.target.dataset.section;
                     if (section) switchToSection(section);
                 });
+            });
+
+            // Добавляем обработчик для ссылки с data-section="contact"
+            document.querySelectorAll('[data-section="contact"]').forEach(el => {
+                if (el.id !== 'contactLink') {
+                    el.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        switchToSection('contact');
+                    });
+                }
             });
 
             document.getElementById('card-offshore').addEventListener('click', function(e) {
