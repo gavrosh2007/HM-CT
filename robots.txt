@@ -1,5 +1,51 @@
+# ============================================================
+# robots.txt для Hermes-Management-and-Consulting-App (hm-ct)
+# Основной домен: hm-ct.vercel.app
+# ============================================================
+
 User-agent: *
 Allow: /
 Disallow: /api/
+Disallow: /admin/
+Disallow: /private/
+Disallow: /tmp/
 
+# ---------- Защита от ИИ-краулеров ----------
+User-agent: GPTBot
+Disallow: /
+
+User-agent: ClaudeBot
+Disallow: /
+
+User-agent: Google-Extended
+Disallow: /
+
+User-agent: CCBot
+Disallow: /
+
+User-agent: FacebookBot
+Disallow: /
+
+User-agent: Meta-ExternalAgent
+Disallow: /
+
+User-agent: Applebot-Extended
+Disallow: /
+
+User-agent: ImagesiftBot
+Disallow: /
+
+User-agent: anthropic-ai
+Disallow: /
+
+User-agent: OmgiliBot
+Disallow: /
+
+User-agent: Diffbot
+Disallow: /
+
+User-agent: PerplexityBot
+Disallow: /
+
+# ---------- Карта сайта (только для hm-ct) ----------
 Sitemap: https://hm-ct.vercel.app/sitemap.xml
